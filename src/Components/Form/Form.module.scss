@@ -1,0 +1,43 @@
+.Form {
+    background-color: #666666;
+    border-radius: 10px;
+    height: 370px;
+    width: 412px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1%;
+    font-size: 20px;
+    section {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.submitButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        width: 180px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: #333333;
+        color: #FFFFFF;
+        &:hover {
+            cursor: pointer;
+            background-color: #FFFFFF;
+            color: #333333;
+            transition: 0.4s;
+        }
+    }
+}
+
+.textInput {
+    border-radius: 5px;
+    padding-left: 8px;
+    height: 26px;
+    border: none;
+    outline: none;
+}

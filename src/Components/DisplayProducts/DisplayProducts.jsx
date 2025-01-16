@@ -1,0 +1,46 @@
+export default function MainPage({products}) {
+    let dataProduct
+    
+    if (products.length !== 0) {
+        dataProduct = (
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Disponível</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        // TODO: O ideal é que cada item cadastrado tenha um ID único para ser colocado no parâmetro "key", posso fazer isso dinamicamente - https://react.dev/learn/updating-arrays-in-state
+                        // TODO: Colocar ordenação dos produtos por valor do menor para o maior, pelo que entendi, precisa do ID pra colocar no parâmetro "key"
+                        // TODO: Ajustar o estilo(SCSS) da tabela
+                        // TODO: Adicionar na memória do navegador para não perder os dados ao fechar a página ou atualizá-la
+
+                        products.map((product, index) => {
+                            return(
+                            <tr key={index}>
+                                <td>{product.name}</td>
+                                <td>{product.price}</td>
+                                <td>{product.available ? "Sim" : "Não"}</td>
+                            </tr>)
+                        })
+                    }
+                </tbody>
+            </table>
+        )
+    } else {
+        dataProduct = <h3>Nenhum produto cadastrado</h3>
+    }
+    
+    return(
+        <>
+            <h2>Produtos Cadastrados</h2>
+            
+            <section>
+                {dataProduct}
+            </section>
+        </>
+    )
+}
