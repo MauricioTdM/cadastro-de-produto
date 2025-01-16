@@ -1,0 +1,13 @@
+.registeredProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    h2 {
+        font-size: 30px;
+    }
+}
+
+.tableProducts {
+    width: 20vw;
+}

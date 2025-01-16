@@ -15,7 +15,6 @@ export default function App() {
     return(
         <>
             <main>
-                <h1>Cadastro de Produto</h1>
                 <Form onFormSubmit={handleFormSubmit}/>
                 <DisplayProducts products={productList}/>
             </main>

@@ -15,7 +15,8 @@ export default function Form({onFormSubmit}) {
 
     return(
         <>
-            <form className={S.Form} onSubmit={register}>
+            <form className={S.form} onSubmit={register}>
+                <h1>Cadastro de Produto</h1>
                 <section>
                     <label htmlFor="name">Nome:</label>
                     <input className={S.textInput} type="text" name="name"/>

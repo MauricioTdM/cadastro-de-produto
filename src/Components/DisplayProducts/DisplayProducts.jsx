@@ -1,9 +1,11 @@
+import S from './DisplayProducts.module.scss'
+
 export default function MainPage({products}) {
     let dataProduct
     
     if (products.length !== 0) {
         dataProduct = (
-            <table>
+            <table className={S.mainTable}>
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
@@ -36,10 +38,11 @@ export default function MainPage({products}) {
     
     return(
         <>
-            <h2>Produtos Cadastrados</h2>
-            
-            <section>
-                {dataProduct}
+            <section className={S.registeredProducts}>
+                <h2>Produtos Cadastrados</h2>
+                <div className={S.tableProducts}>
+                    {dataProduct}
+                </div>
             </section>
         </>
     )
