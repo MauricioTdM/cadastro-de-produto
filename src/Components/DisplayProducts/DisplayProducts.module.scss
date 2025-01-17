@@ -13,10 +13,17 @@
     border-collapse: collapse;
     border: solid 2px #C7C8CC;
     font-size: 20px;
+    @media (max-width: 1024px) {
+        width: 40vw;
+    }
+    @media (max-width: 768px) {
+        width: 412px;
+    }
     thead {
         color: #333333;
         background-color: #C7C8CC;
         height: 50px;
+        padding: 2%;
     }
     td {
         border: solid 1px #C7C8CC;

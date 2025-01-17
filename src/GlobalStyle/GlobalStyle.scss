@@ -15,4 +15,7 @@ main {
     gap: 20px;
     background-color: #444444;
     color: #FFFFFF;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
