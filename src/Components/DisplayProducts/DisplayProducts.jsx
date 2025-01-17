@@ -9,16 +9,17 @@ export default function MainPage({products}) {
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Valor</th>
+                        <th scope="col">Valor(R$)</th>
                         <th scope="col">Disponível</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className={S.tableBody}>
                     {
                         // TODO: O ideal é que cada item cadastrado tenha um ID único para ser colocado no parâmetro "key", posso fazer isso dinamicamente - https://react.dev/learn/updating-arrays-in-state
                         // TODO: Colocar ordenação dos produtos por valor do menor para o maior, pelo que entendi, precisa do ID pra colocar no parâmetro "key"
                         // TODO: Ajustar o estilo(SCSS) da tabela
                         // TODO: Adicionar na memória do navegador para não perder os dados ao fechar a página ou atualizá-la
+                        // TODO: Adicionar botão para excluir um produto
 
                         products.map((product, index) => {
                             return(
@@ -40,7 +41,7 @@ export default function MainPage({products}) {
         <>
             <section className={S.registeredProducts}>
                 <h2>Produtos Cadastrados</h2>
-                <div className={S.tableProducts}>
+                <div>
                     {dataProduct}
                 </div>
             </section>
