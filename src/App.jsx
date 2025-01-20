@@ -6,11 +6,11 @@ import './GlobalStyle/GlobalStyle.scss'
 
 export default function App() {
     const [productList, setProductList] = useState([])
-
-    function handleFormSubmit(data) {
+    console.log(productList)
+    function handleFormSubmit(data) {   
         let newProductList = [...productList, data]
-        setProductList(newProductList)        
-    }
+        setProductList(newProductList)
+    } 
 
     return(
         <>

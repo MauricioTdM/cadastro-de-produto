@@ -18,8 +18,9 @@ export default function MainPage({products}) {
                         // TODO: O ideal é que cada item cadastrado tenha um ID único para ser colocado no parâmetro "key", posso fazer isso dinamicamente - https://react.dev/learn/updating-arrays-in-state
                         // TODO: Colocar ordenação dos produtos por valor do menor para o maior, pelo que entendi, precisa do ID pra colocar no parâmetro "key"
                         // TODO: Ajustar o estilo(SCSS) da tabela
-                        // TODO: Adicionar na memória do navegador para não perder os dados ao fechar a página ou atualizá-la
+                        // TODO: Adicionar na memória do navegador para não perder os dados ao fechar a página ou atualizá-la: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
                         // TODO: Adicionar botão para excluir um produto
+                        // TODO: Adicionar um efeito para indicar que um campo precisa ser preenchido
 
                         products.map((product, index) => {
                             return(
