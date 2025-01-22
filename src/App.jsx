@@ -5,12 +5,27 @@ import './GlobalStyle/GlobalStyle.scss'
 
 
 export default function App() {
+
     const [productList, setProductList] = useState([])
+    const [productID, setProductID] = useState(0)
     console.log(productList)
-    function handleFormSubmit(data) {   
-        let newProductList = [...productList, data]
+
+    const handleFormSubmit = (data) => { 
+        let newProductList = []
+
+        if (productList.length === 0) {
+            data.id = productID
+        } else {
+            data.id = productID + 1
+            setProductID(data.id)
+        }
+        newProductList = [...productList, data]
         setProductList(newProductList)
-    } 
+    }
+
+    // const productToRemove = () => {
+
+    // }
 
     return(
         <>

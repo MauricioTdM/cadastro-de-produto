@@ -3,6 +3,15 @@ import S from './DisplayProducts.module.scss'
 export default function MainPage({products}) {
     let dataProduct
     
+    const removeProduct = (event) => {
+        const productToRemove = event.target.parentElement.parentElement
+        const parent = productToRemove.parentElement        
+        parent.removeChild(productToRemove)
+        // removeProductFromList()
+        
+        // const IDProductToRemove = parent.querySelector()
+    }
+    
     if (products.length !== 0) {
         dataProduct = (
             <table className={S.mainTable}>
@@ -22,12 +31,13 @@ export default function MainPage({products}) {
                         // TODO: Adicionar botão para excluir um produto
                         // TODO: Adicionar um efeito para indicar que um campo precisa ser preenchido
 
-                        products.map((product, index) => {
+                        products.map((product, id) => {
                             return(
-                            <tr key={index}>
+                            <tr key={id}>
                                 <td>{product.name}</td>
                                 <td>{product.price}</td>
                                 <td>{product.available ? "Sim" : "Não"}</td>
+                                <td><button onClick={removeProduct}>Remover</button></td>
                             </tr>)
                         })
                     }

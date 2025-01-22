@@ -1,7 +1,8 @@
 import S from './Form.module.scss'
 
 export default function Form({onFormSubmit}) {
-    function register(event) {
+    
+    const register = (event) => {
         event.preventDefault()
 
         let productName = event.target[0].value
