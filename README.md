@@ -23,7 +23,8 @@ O projeto foi desenvolvido utilizando a biblioteca React, com estilização em S
 ## 🚀 Funcionalidades Implementadas
 
 - Cadastro de produtos.
-- Listagem de produtos cadastrados.
+- Listagem de produtos ordenados do menor para o maior preço.
+- Remoção de produtos.
 - Responsividade para diferentes tamanhos de tela.
 
 ## 📂 Estrutura do Projeto

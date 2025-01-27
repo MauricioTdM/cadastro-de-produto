@@ -1,21 +1,27 @@
+import { useState } from 'react'
 import S from './Form.module.scss'
 
 export default function Form({onFormSubmit}) {
+    const [productID, setProductID] = useState(0)
     
     const register = (event) => {
         event.preventDefault()
 
-        let productName = event.target[0].value
-        let productDescription = event.target[1].value
-        let productPrice = Number(event.target[2].value)
-        let isProductAvailable = event.target[3].checked
+        const productName = event.target[0].value
+        const productDescription = event.target[1].value
+        const productPrice = Number(event.target[2].value)
+        const isProductAvailable = event.target[3].checked
 
-        let dataProduct = {
+        const dataProduct = {
+            id: productID,
             name: productName,
             description: productDescription,
             price: productPrice,
-            available: isProductAvailable
+            available: isProductAvailable,
         }
+        let newID = productID
+        setProductID(newID + 1)
+        
         onFormSubmit(dataProduct)
     }
 

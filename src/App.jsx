@@ -7,31 +7,27 @@ import './GlobalStyle/GlobalStyle.scss'
 export default function App() {
 
     const [productList, setProductList] = useState([])
-    const [productID, setProductID] = useState(0)
+    
     console.log(productList)
+
+    // TODO: Quando eu vou utilizar o useEffect: Nesse caso, na primeira vez que eu iniciar o navegador, ele vai procurar no localStorage se tem algum produto. Caso tenha, será usado o setProductList pra jogar na lista de ser produtos a ser exibida na tela
 
     const handleFormSubmit = (data) => { 
         let newProductList = []
-
-        if (productList.length === 0) {
-            data.id = productID
-        } else {
-            data.id = productID + 1
-            setProductID(data.id)
-        }
         newProductList = [...productList, data]
         setProductList(newProductList)
     }
 
-    // const productToRemove = () => {
-
-    // }
+    const productToRemove = (productID) => {
+        const newProductList = productList.filter((produto) => produto.id !== productID)
+        setProductList(newProductList)
+    }
 
     return(
         <>
             <main>
                 <Form onFormSubmit={handleFormSubmit}/>
-                <DisplayProducts products={productList}/>
+                <DisplayProducts products={productList} removeProductFromList={productToRemove}/>
             </main>
         </>
     )
