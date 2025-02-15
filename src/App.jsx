@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./Components/Form/Form.jsx";
 import DisplayProducts from "./Components/DisplayProducts/DisplayProducts.jsx";
 import './GlobalStyle/GlobalStyle.scss'
@@ -23,11 +23,33 @@ export default function App() {
         setProductList(newProductList)
     }
 
+    useEffect(() => {
+        localStorage.setItem("products", JSON.stringify(productList))
+    },[productList])
+
+    // useEffect(() => {
+    //     const products = localStorage.getItem("products")
+    //     // if (products) {
+    //         // let productsList = products.map((produto) => )
+    //         // setProductList(products)
+    //         // products.map((produto) => {
+    //         //     console.log(produto)
+                
+    //         // })
+            
+    //     }
+    // },[])
+
     return(
         <>
-            <main>
-                <Form onFormSubmit={handleFormSubmit}/>
-                <DisplayProducts products={productList} removeProductFromList={productToRemove}/>
+            <main className="main">
+                <section className="mainContent">
+                    <h1>Cadastro de Produto</h1>
+                    <Form onFormSubmit={handleFormSubmit}/>
+                </section>
+                <section>
+                    <DisplayProducts products={productList} removeProductFromList={productToRemove}/>
+                </section>
             </main>
         </>
     )
