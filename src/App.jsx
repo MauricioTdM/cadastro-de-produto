@@ -6,11 +6,11 @@ import './GlobalStyle/GlobalStyle.scss'
 
 export default function App() {
 
-    const [productList, setProductList] = useState([])
+    const storedProducts = JSON.parse(localStorage.getItem("products"))
+
+    const [productList, setProductList] = useState(storedProducts)
     
     console.log(productList)
-
-    // TODO: Quando eu vou utilizar o useEffect: Nesse caso, na primeira vez que eu iniciar o navegador, ele vai procurar no localStorage se tem algum produto. Caso tenha, será usado o setProductList pra jogar na lista de ser produtos a ser exibida na tela
 
     const handleFormSubmit = (data) => { 
         let newProductList = []
@@ -26,19 +26,6 @@ export default function App() {
     useEffect(() => {
         localStorage.setItem("products", JSON.stringify(productList))
     },[productList])
-
-    // useEffect(() => {
-    //     const products = localStorage.getItem("products")
-    //     // if (products) {
-    //         // let productsList = products.map((produto) => )
-    //         // setProductList(products)
-    //         // products.map((produto) => {
-    //         //     console.log(produto)
-                
-    //         // })
-            
-    //     }
-    // },[])
 
     return(
         <>
