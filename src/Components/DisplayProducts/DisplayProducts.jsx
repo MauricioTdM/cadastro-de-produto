@@ -26,7 +26,6 @@ export default function MainPage({products, removeProductFromList}) {
                 </thead>
                 <tbody className={S.tableBody}>
                     {
-                        // TODO: Adicionar na memória do navegador para não perder os dados ao fechar a página ou atualizá-la: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
                         // TODO: Adicionar um efeito para indicar que um campo precisa ser preenchido
                         products.map((product) => {
                             return(
