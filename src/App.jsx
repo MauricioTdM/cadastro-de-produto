@@ -6,7 +6,7 @@ import './GlobalStyle/GlobalStyle.scss'
 
 export default function App() {
 
-    const storedProducts = JSON.parse(localStorage.getItem("products"))
+    const storedProducts = JSON.parse(localStorage.getItem("products")) || []
 
     const [productList, setProductList] = useState(storedProducts)
     
