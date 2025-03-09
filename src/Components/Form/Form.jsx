@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import S from './Form.module.scss'
+import CurrencyInput from 'react-currency-input-field'
+import { useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import { RegisterSuccess } from '../RegisterSuccess/RegisterSuccess'
 
@@ -7,10 +8,10 @@ export default function Form({onFormSubmit}) {
     const [productID, setProductID] = useState(0)
     
     const register = (event) => {
-        event.preventDefault()
+        event.preventDefault()        
 
         const productName = event.target[0].value
-        const productPrice = Number(event.target[1].value).toFixed(2)
+        const productPrice = event.target[1].value
         const productDescription = event.target[2].value
         const isProductAvailable = event.target[3].checked
 
@@ -38,7 +39,16 @@ export default function Form({onFormSubmit}) {
                     </div>
                     <div>
                         <label htmlFor="priceForLabel">Valor:</label>
-                        <input className={S.textInput} type="number" step="0.01" name="price" id='priceForLabel' placeholder='Ex.: 999.99 ou 999,99' required/>
+                        <CurrencyInput
+                            id="priceForLabel" 
+                            allowNegativeValue={false} 
+                            decimalsLimit={2} 
+                            placeholder="Ex.: 999,99" 
+                            prefix="R$ "
+                            decimalSeparator=","
+                            groupSeparator="."
+                            fixedDecimalLength={2}
+                            required/>
                     </div>
                 </section>
                 <section className={S.secondSection}>
