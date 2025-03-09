@@ -9,8 +9,6 @@ export default function App() {
     const storedProducts = JSON.parse(localStorage.getItem("products")) || []
 
     const [productList, setProductList] = useState(storedProducts)
-    
-    console.log(productList)
 
     const handleFormSubmit = (data) => { 
         let newProductList = []
