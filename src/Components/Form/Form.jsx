@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import S from './Form.module.scss'
+import { ToastContainer } from 'react-toastify'
+import { RegisterSuccess } from '../RegisterSuccess/RegisterSuccess'
 
 export default function Form({onFormSubmit}) {
     const [productID, setProductID] = useState(0)
@@ -8,7 +10,7 @@ export default function Form({onFormSubmit}) {
         event.preventDefault()
 
         const productName = event.target[0].value
-        const productPrice = Number(event.target[1].value)
+        const productPrice = Number(event.target[1].value).toFixed(2)
         const productDescription = event.target[2].value
         const isProductAvailable = event.target[3].checked
 
@@ -23,6 +25,7 @@ export default function Form({onFormSubmit}) {
         setProductID(newID + 1)
         
         onFormSubmit(dataProduct)
+        RegisterSuccess('Produto Cadastrado com Sucesso')
     }
 
     return(
@@ -52,6 +55,7 @@ export default function Form({onFormSubmit}) {
                 <section className={S.submitButton}>
                     <button type="submit">Adicionar Produto</button>
                 </section>
+                <ToastContainer />
             </form> 
         </>
     )
