@@ -7,15 +7,27 @@
     list-style: none;
     font-family: "Lato", serif;
 }
+
+// Imagem do background retirada de: https://unsplash.com/pt-br/fotografias/uma-imagem-desfocada-de-um-fundo-azul-e-rosa-XgeZu2jBaVI
+// Imagem do background retirada de: https://unsplash.com/pt-br/fotografias/tecido-listrado-azul-e-branco-dOG0z4-gqp0
 .main {
     padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FBFBFB;
+    background-image: url("../Assets/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     min-height: 100vh;
+    .box {
+        border-radius: 15px;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        background-color: rgba(255, 255, 255, 0.45);
+        border: solid 1px rgba(255, 255, 255, .25);
+        backdrop-filter: blur(50px);
+    }
     .mainContent {
-        background-color: #FFFFFF;
+        border-radius: 15px;
         max-height: 60vh;
         width: 50vw;
         display: flex;
