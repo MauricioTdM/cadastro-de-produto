@@ -28,12 +28,14 @@ export default function App() {
     return(
         <>
             <main className="main">
-                <section className="mainContent">
-                    <h1>Cadastro de Produto</h1>
-                    <Form onFormSubmit={handleFormSubmit}/>
-                </section>
-                <section>
-                    <DisplayProducts products={productList} removeProductFromList={productToRemove}/>
+                <section className="box">
+                    <section className="mainContent">
+                        <h1>Cadastro de Produto</h1>
+                        <Form onFormSubmit={handleFormSubmit}/>
+                    </section>
+                    <section className="displayProducts">
+                        <DisplayProducts products={productList} removeProductFromList={productToRemove}/>
+                    </section>
                 </section>
             </main>
         </>
